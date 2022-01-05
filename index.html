@@ -614,6 +614,16 @@ CIFAR100あたりを使った転移学習を想定し，100クラスで事前訓
 &lt;https://docs.google.com/document/d/18vXWieG2ZhXu_MLMGV7-E0rU8aL2F-HeQjHJoGeCFvU/edit&gt;</span><div>(Tue Nov 30 2021 14:04:11 GMT+0000 (Coordinated Universal Time))</div></li>
             <li><span>227. フラクタル画像生成による行動認識モデルの事前学習（コンピュータビジョン最前線winter2021 24p付近参照）</span><div>(Wed Dec 15 2021 12:21:46 GMT+0000 (Coordinated Universal Time))</div></li>
             <li><span>228. センサからの歩行路面種別推定の高精度化に向けた事前学習手法の検討。HASCのデータをシンプルに訓練するだけでなく、歩行、階段等に限定の上、更に適当なカテゴリラベルを付与して超多クラス分類で事前訓練する。</span><div>(Fri Dec 17 2021 06:41:01 GMT+0000 (Coordinated Universal Time))</div></li>
+            <li><span>229. チャネルドロップアウト
+全結合層にDropoutするのではなく，CNNにDropoutしたい．ということでチャネル単位でDropoutしようという企画．
+以下の関連研究では01マスクの乗算で算出しているくさいけど，シンプルに以下で実装できる気がする．
+&amp;gt; x # original tensor {?, ch, size}
+&amp;gt; x &amp;lt;- x.transpose(0,2,1)   # (?, size, ch)
+&amp;gt; x &amp;lt;- Dropout(x)
+&amp;gt; x &amp;lt;- x.transpose(0,2,1)  # (?, ch, size)
+&lt;http://home.ustc.edu.cn/~saihui/papers/aaai2019_weighted.pdf&gt;
+&lt;https://arxiv.org/pdf/1904.03392.pdf&gt;
+GroupConvでアンサンブル化が図れるんだけど，Groupのようにチャネルごとに全部混ぜずに制約を課すことが精度向上に寄与すると思っている．</span><div>(Wed Jan 05 2022 01:45:33 GMT+0000 (Coordinated Universal Time))</div></li>
         </ul>
     </div></div>
 </body>
