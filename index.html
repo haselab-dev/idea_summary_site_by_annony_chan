@@ -634,6 +634,13 @@ GroupConvでアンサンブル化が図れるんだけど，Groupのようにチ
 &amp;gt; ・UCIは全体的にDAがやや効く．Flipが一番強い．
 &amp;gt; ・UniMiBはPermutationやScaling等が強め．
 ※ただアイデアを積極的に書いてくれるのは最高にありがたいです:ok_hand:</span><div>(Wed Jan 19 2022 14:02:30 GMT+0000 (Coordinated Universal Time))</div></li>
+            <li><span>231. 対話的転移学習
+近藤君の修士論文内で示されているクラス分離度（Calinski Harabasz Score; CHS）を使って，
+ソースドメインDs（ラベルあり多数），ターゲットドメインDt（ラベルあり少量），モデルM　に対して
+１．M(Ds)  // 何かしらの摂動ζを与えたMの訓練
+２．max_(ζ ∈ Ζ)  CHS(M(Dt))  // 摂動ζをCHSの最大化問題で解く
+という問題設定にすることで，クラス分離度の高い事前学習を実現する．
+＃なお本問題を，ドメイン類似度の最大化問題として，ソースドメイン探索を行った事例はある．その亜種．</span><div>(Tue Feb 01 2022 07:45:38 GMT+0000 (Coordinated Universal Time))</div></li>
         </ul>
     </div></div>
 </body>
