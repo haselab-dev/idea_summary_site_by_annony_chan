@@ -660,6 +660,22 @@ DeepLabCutを適用するだけというところからはじめて，少しず�
             <li><span>237.  学習において、正解ラベルをone-hot表現ではないもので学習するとどうなるのか
 正解と似ているものの数値を少し上げるなど
 「似ている」という概念をアルゴリズム化するのが難しい</span><div>(Wed Jun 01 2022 06:19:21 GMT+0000 (Coordinated Universal Time))</div></li>
+            <li><span>238. 柘植君に投げたアンサンブルの候補の残り（一部過去と重複あり）
+テーマ１：アンサンブル時の接続のシャッフル
+　＞ブロックごとにアンサンブルの接続をシャッフルする．
+　＞＞EasyEnsemble論文はBlockごとにアンサンブル化可能だが，
+　＞＞チャネル方向にストレートにGroupを作っている．これを
+　＞＞シャッフルしたらどうなるのか？（ShuffleNetと同じかもしれん）
+　＞＞＞&lt;https://qiita.com/Yuki03759/items/36d7c01f4e530c8b6ce0&gt;
+テーマ２：チャネルドロップアウトとアンサンブル
+　＞原理的にはだいたい同じはずなんだけど精度差出るよねって確かめる．
+　＞&lt;https://ojs.aaai.org/index.php/AAAI/article/view/4858&gt;
+　＞ドロップアウトをランダムにせずに，最初にランダムで決定してEpoch全部固定しておけばEasyEnsembleのシャッフルと同等かも？
+テーマ３：初期値の分布を意図的に偏らせる
+　＞Heの初期化だと全初期値をθ～N(0,sqrt(2/M))で初期化するが，
+　＞重み全体で見ると上記分布に従いつつも，重みのグループごとにこれを偏らせると学習にどんな影響が出るのか？
+　＞＞総合的に見ると同じ分布取るなら何も変わらない気がしてきた．．．</span><div>(Thu Jun 02 2022 02:36:02 GMT+0000 (Coordinated Universal Time))</div></li>
+            <li><span></span><div>(Thu Jun 02 2022 02:36:02 GMT+0000 (Coordinated Universal Time))</div></li>
         </ul>
     </div></div>
 </body>
